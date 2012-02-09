@@ -32,6 +32,8 @@ public class MainMenu extends Activity implements View.OnClickListener {
 
 	ProgressDialog dialog;
 	
+	int NotificationBroadcast = 1;
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,18 +82,25 @@ public class MainMenu extends Activity implements View.OnClickListener {
 	public void endGPS()
 	{
 
-	 try
-	 {           
-		 lm.removeGpsStatusListener(null);
-		 lm = null;
-	 }
-	 catch(Exception e)
-	 {
-	  e.printStackTrace();
-	 }
+		try
+		{           
+			lm.removeGpsStatusListener(null);
+			lm = null;
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 
 		Toast.makeText(MainMenu.this, "GPS stopped",
              Toast.LENGTH_SHORT).show();
+		
+		String ns = Context.NOTIFICATION_SERVICE;
+    	NotificationManager mNotificationManager = (NotificationManager) getSystemService(ns);
+    	
+    	mNotificationManager.cancel(NotificationBroadcast);
+		
+		super.finish();
 	}
     
     public void getLocation() {
@@ -112,7 +121,7 @@ public class MainMenu extends Activity implements View.OnClickListener {
 
     	notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
     	
-    	final int NOTIFICATION_ID = 1;
+    	final int NOTIFICATION_ID = NotificationBroadcast;
 
     	mNotificationManager.notify(NOTIFICATION_ID, notification);
     	
