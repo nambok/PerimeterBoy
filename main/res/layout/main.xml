@@ -42,5 +42,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/facebook_view_str" />
+
+    <Button
+        android:id="@+id/googleBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/google_login_str" />
+
+    <Button
+        android:id="@+id/linkedId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/linkedin_login_str" />
 
 </LinearLayout>

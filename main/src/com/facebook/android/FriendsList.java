@@ -6,6 +6,7 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,6 +32,8 @@ public class FriendsList extends Activity implements OnItemClickListener {
     protected ListView friendsList;
     protected static JSONArray jsonArray;
     
+    protected String API_reponse;
+    
     ProgressDialog dialog;
 
     /*
@@ -49,6 +52,22 @@ public class FriendsList extends Activity implements OnItemClickListener {
 			@Override
 			public void onClick(View v) {
 				refresh();
+			}
+		});
+        
+        final Button displayMapBtn = (Button) findViewById(R.id.mapBtnId);
+        displayMapBtn.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				 try {
+					 Intent myIntent = new Intent(getApplicationContext(), MapViewPeople.class);
+			         myIntent.putExtra("API_RESPONSE", API_reponse);
+			         startActivity(myIntent);
+			     }
+			     catch (ActivityNotFoundException e) {
+			    	 Toast.makeText(getBaseContext(), "Activity Not Found", Toast.LENGTH_SHORT).show(); 
+			     }
 			}
 		});
         
@@ -88,6 +107,7 @@ public class FriendsList extends Activity implements OnItemClickListener {
 
        @Override
        public void onComplete(final String response, final Object state) {
+    	   API_reponse = response;
     	   dialog.dismiss();
     	   mHandler.post(new Runnable() {
                @Override

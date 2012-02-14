@@ -94,4 +94,7 @@
     <string name="broadcast_str">Broadcast Location</string>
     <string name="exit_str">Quit Application</string>
     <string name="stopBroadcast_str">Stop GPS</string>
+    <string name="show_map_str">Display Map</string>
+    <string name="google_login_str">Login with Google</string>
+    <string name="linkedin_login_str">Login with LinkedIn</string>
 </resources>

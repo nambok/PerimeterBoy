@@ -35,6 +35,8 @@
         <activity android:name=".ViewProfile"></activity>
         <activity android:name=".SettingsView"></activity>
         <activity android:name=".SendMessage"></activity>
+        <activity android:name=".MapViewPeople"></activity>
+        <uses-library android:name="com.google.android.maps" />
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />

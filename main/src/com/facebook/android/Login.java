@@ -21,6 +21,7 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -103,6 +104,36 @@ public class Login extends Activity implements View.OnClickListener {
         if (Utility.mFacebook.isSessionValid()) {
             requestUserData();
         }
+        
+        
+        final Button googleBtn = (Button) findViewById(R.id.googleBtn);
+        googleBtn.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				 try {
+					 
+			     }
+			     catch (ActivityNotFoundException e) {
+			    	 Toast.makeText(getBaseContext(), "Activity Not Found", Toast.LENGTH_SHORT).show(); 
+			     }
+			}
+		});
+        
+        final Button linkedInBtn = (Button) findViewById(R.id.linkedId);
+        linkedInBtn.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				 try {
+					
+			     }
+			     catch (ActivityNotFoundException e) {
+			    	 Toast.makeText(getBaseContext(), "Activity Not Found", Toast.LENGTH_SHORT).show(); 
+			     }
+			}
+		});
+        
     }
 
     @Override

@@ -4,11 +4,19 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@color/black">
+
     <Button
-                android:id="@+id/refreshBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/refresh_button" />
+        android:id="@+id/refreshBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/refresh_button" />
+
+    <Button
+        android:id="@+id/mapBtnId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/show_map_str" />
+
     <ListView
         android:id="@+id/friends_list"
         android:layout_width="fill_parent"
