@@ -11,7 +11,23 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static int close=0x7f020000;
-        public static int facebook_icon=0x7f020001;
+        public static int balloon_overlay_bg_selector=0x7f020000;
+        public static int balloon_overlay_close=0x7f020001;
+        public static int balloon_overlay_focused=0x7f020002;
+        public static int balloon_overlay_unfocused=0x7f020003;
+        public static int close=0x7f020004;
+    }
+    public static final class id {
+        public static int balloon_inner_layout=0x7f050001;
+        public static int balloon_item_snippet=0x7f050003;
+        public static int balloon_item_title=0x7f050002;
+        public static int balloon_main_layout=0x7f050000;
+        public static int close_img_button=0x7f050004;
+    }
+    public static final class layout {
+        public static int balloon_overlay=0x7f030000;
+    }
+    public static final class string {
+        public static int app_name=0x7f040000;
     }
 }
